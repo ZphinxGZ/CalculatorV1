@@ -1,9 +1,9 @@
 let display = document.querySelector(".display");
-let buttons = document.querySelectorAll("button");
 let operators = ["%", "+", "-", "*", "/", "="];
 
 let output  = ""
-let calculator = (btnValue) => {
+function calculator(btnEle){
+    let btnValue = btnEle.value
     //เช็คว่าปุ่มที่กดคือ "=" ใช่มั้ย และ เช็คว่า output ไม่ใช่สตริงว่าง
     if(btnValue === "=" && output !== ""){
         //eval() คือคำนวณนิพจน์ที่อยู่ใน output โดยใช้ผลลัพธ์จากการแทนที่เปอร์เซ็นต์เป็นการหารด้วย 100    *******(ใช้เยอะ จำๆ)
@@ -24,11 +24,6 @@ let calculator = (btnValue) => {
     }
     display.value = output
 }
-
-//อันนี้คือแอดอีเว้นให้ปุ่มทุกปุ่ม
-buttons.forEach((button) => {
-    button.addEventListener("click", (btnValue) => calculator(btnValue.target.dataset.value))
-})
 
 
 
