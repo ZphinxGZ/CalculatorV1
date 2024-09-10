@@ -19,7 +19,7 @@ let calculator = (btnValue) => {
         //output เป็นค่าว่างและปุ่มที่กดเป็นโอเปอเรเตอร์ ฟังก์ชันจะ return ออก
         if(output === "" && operators.includes(btnValue)) return
 
-        //output ไม่เป็นค่าว่าง หรือ btnValue ไม่ใช่โอเปอเรเตอร์) โค้ดจะทำงาน
+        //output ไม่เป็นค่าว่าง และ btnValue ไม่ใช่โอเปอเรเตอร์) โค้ดจะทำงาน
         output = output + btnValue
     }
     display.value = output
@@ -27,7 +27,7 @@ let calculator = (btnValue) => {
 
 //อันนี้คือแอดอีเว้นให้ปุ่มทุกปุ่ม
 buttons.forEach((button) => {
-    button.addEventListener("click", (ele) => calculator(ele.target.dataset.value))
+    button.addEventListener("click", (btnValue) => calculator(btnValue.target.dataset.value))
 })
 
 
